@@ -1,13 +1,18 @@
 <h1>Add New Image</h1>
-<%= form_with scope: :image, local: true do |form| %>
-<p>
-  <%= form.label: image %>
-  <%= form.filefield: image %>
-</p>
+<%= form_with scope: :image, url: images_path, local: true do |form| %>
 
-<p>
-    <%= form.label :image-description %><br>
-    <%= form.text_area :text %>
-</p>
+  <p>
+    <%= form.label :img_url %>
+    <%= form.file_field :image %>
+  </p>
+
+  <p>
+      <%= form.label :description %><br>
+      <%= form.text_area :text %>
+  </p>
+
+  <p>
+      <%= form.submit %>
+  </p>
 
 <% end %>
